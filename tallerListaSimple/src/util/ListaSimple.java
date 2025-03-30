@@ -52,6 +52,39 @@ public class ListaSimple<T> implements Iterable<T> {
 		return result;
 	}
 
+	//punto3
+	public void eliminarNumerosPares() {
+		Nodo<T> actual = nodoPrimero;
+		Nodo<T> anterior = null;
+		boolean seEliminaronPares = false;
+
+		while (actual != null) {
+			T valor = actual.getValorNodo();
+			if (valor instanceof Number) {
+				Number num = (Number) valor;
+				if (num.intValue() % 2 == 0){
+					if (anterior == null) {
+						nodoPrimero =  actual.getSiguienteNodo();
+					} else {
+						anterior.setSiguienteNodo(actual.getSiguienteNodo());
+					}
+					tamanio--;
+					seEliminaronPares =true;
+					actual = actual.getSiguienteNodo();
+					continue;
+				}
+			}
+			anterior =actual;
+			actual = actual.getSiguienteNodo();
+		}
+		if (seEliminaronPares){
+			imprimirLista();
+		}else{
+			System.out.println("la lista no es numerica o no hay elementos en la lista");
+		}
+	}
+
+
 	//Metodos basicos
 
 	//Agregar al inicio de la lista
