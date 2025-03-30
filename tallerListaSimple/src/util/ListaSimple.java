@@ -84,6 +84,24 @@ public class ListaSimple<T> implements Iterable<T> {
 		}
 	}
 
+	//punto4
+	public List<T> valoresImparesLista() {
+		List<T> result = new ArrayList<>();
+		Nodo<T> actual = nodoPrimero;
+
+		while (actual != null) {
+			T valor = actual.getValorNodo();
+			if (valor instanceof Number) {
+				Number num = (Number) valor;
+				if (num.intValue() % 2 != 0) {
+					result.add(actual.getValorNodo());
+				}
+			}
+			actual = actual.getSiguienteNodo();
+		}
+		return result;
+	}
+
 
 	//Metodos basicos
 
