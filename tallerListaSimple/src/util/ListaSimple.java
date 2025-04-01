@@ -350,7 +350,11 @@ public class ListaSimple<T> implements Iterable<T> {
 
 
 
-
-
+	// punto 10
+	public ListaSimple<T> conectar(ListaSimple<T> lista1, ListaSimple<T> lista2) {
+		ListaSimple<T> aux = lista1;
+		aux.nodoUltimo.setSiguienteNodo(lista2.nodoPrimero);
+		return aux;
+	}
 
 }

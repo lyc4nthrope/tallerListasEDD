@@ -35,4 +35,11 @@ public class Nodo<T> {
     public void setValorNodo(T valorNodo) {
         this.valorNodo = valorNodo;
     }
+
+    @Override
+    public String toString() {
+        return "Nodo{" +
+                "valorNodo=" + valorNodo +
+                '}';
+    }
 }
