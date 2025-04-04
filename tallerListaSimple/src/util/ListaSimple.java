@@ -102,6 +102,46 @@ public class ListaSimple<T> implements Iterable<T> {
 		return result;
 	}
 
+	//punto5
+	public int contarRepeticiones(T valorBuscado){
+		int cont = 0;
+		Nodo<T> actual = nodoPrimero;
+
+		while (actual != null){
+			T valorActual = actual.getValorNodo();
+			if (valorBuscado == null){
+				if (valorActual == null){
+					cont++;
+				}
+			}else {
+				if (valorBuscado.equals(valorActual)){
+					cont++;
+				}
+			}
+			actual = actual.getSiguienteNodo();
+		}
+		return cont;
+	}
+
+	//punto6
+	public void imprimirHaciaAtras() {
+		if (estaVacia()){
+			System.out.println("lista vacia");
+			return;
+		}
+		for(NodoDoble<T> aux = nodoUltimo; aux!=null; aux = aux.getAnteriorNodo()) {
+			System.out.print( aux.getValorNodo()+"\t" );
+		}
+		System.out.println();
+	}
+
+	//punto7
+	@Override
+	public Iterator<T> iterator() {
+
+		return new IteradorListaDoble(nodoPrimero);
+	}
+
 
 	//Metodos basicos
 
