@@ -130,6 +130,8 @@ public class ListaDoble<T> implements Iterable<T> {
         return result;
     }
 
+
+
     //Metodos basicos
 
     public void agregarInicio(T valorNodo) {
@@ -406,3 +408,6 @@ public class ListaDoble<T> implements Iterable<T> {
         this.tamanio = tamanio;
     }
 }
+/**
+ *
+ */

@@ -1,6 +1,6 @@
 package punto2;
 
-import util.ListaSimple;
+import model.Persona;
 
 import java.util.List;
 

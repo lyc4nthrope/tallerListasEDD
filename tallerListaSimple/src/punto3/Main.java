@@ -2,8 +2,6 @@ package punto3;
 
 import util.ListaSimple;
 
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
         ListaSimple listaSimple = new ListaSimple();

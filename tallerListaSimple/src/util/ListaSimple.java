@@ -1,6 +1,6 @@
 package util;
 
-import punto2.Persona;
+import model.Persona;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -9,7 +9,7 @@ import java.util.List;
 public class ListaSimple<T> implements Iterable<T> {
 
 	private Nodo<T> nodoPrimero;
-	private Nodo<T> nodoUltimo;
+	Nodo<T> nodoUltimo;
 	private int tamanio;
 
 
@@ -122,27 +122,6 @@ public class ListaSimple<T> implements Iterable<T> {
 		}
 		return cont;
 	}
-
-	//punto6
-	public void imprimirHaciaAtras() {
-		if (estaVacia()){
-			System.out.println("lista vacia");
-			return;
-		}
-		for(NodoDoble<T> aux = nodoUltimo; aux!=null; aux = aux.getAnteriorNodo()) {
-			System.out.print( aux.getValorNodo()+"\t" );
-		}
-		System.out.println();
-	}
-
-	//punto7
-	@Override
-	public Iterator<T> iterator() {
-
-		return new IteradorListaDoble(nodoPrimero);
-	}
-
-
 	//Metodos basicos
 
 	//Agregar al inicio de la lista
@@ -331,6 +310,12 @@ public class ListaSimple<T> implements Iterable<T> {
 		return -1;
 	}
 
+	// punto 10
+	public ListaSimple<T> conectar(ListaSimple<T> lista1, ListaSimple<T> lista2) {
+		ListaSimple<T> aux = lista1;
+		aux.nodoUltimo.setSiguienteNodo(lista2.getNodoPrimero());
+		return aux;
+	}
 
 	@Override
 	public Iterator<T> iterator() {
@@ -386,15 +371,6 @@ public class ListaSimple<T> implements Iterable<T> {
 
 	public void setTamanio(int tamanio) {
 		this.tamanio = tamanio;
-	}
-
-
-
-	// punto 10
-	public ListaSimple<T> conectar(ListaSimple<T> lista1, ListaSimple<T> lista2) {
-		ListaSimple<T> aux = lista1;
-		aux.nodoUltimo.setSiguienteNodo(lista2.nodoPrimero);
-		return aux;
 	}
 
 }
