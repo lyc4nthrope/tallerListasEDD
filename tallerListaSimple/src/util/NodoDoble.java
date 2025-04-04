@@ -17,6 +17,7 @@ public class NodoDoble<T> {
         this.anteriorNodo = anterior;
     }
 
+
     //Metodos get y set de la clase Nodo
 
     public NodoDoble<T> getSiguienteNodo() {
