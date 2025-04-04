@@ -74,6 +74,8 @@ public class ListaInt {
         }
     }
 
+
+    //12
     public double mediaOf(ListaInt lista){
         double media = 0;
         int i = 0;
@@ -99,6 +101,21 @@ public class ListaInt {
         }
         double deviation = Math.sqrt(suma/i);
         return deviation;
+    }
+
+
+    //13
+    public int maxDistance(Nodo<Integer> aux,int x, int ante, int actu, int maximaDistancia){
+        if (aux == null) {
+            return maximaDistancia;
+        }if (aux.getValorNodo() == x ) {
+            if (ante != -1){
+                maximaDistancia = Math.max(maximaDistancia, actu - ante);
+            }
+            ante = actu;
+        }
+
+        return maxDistance(aux.getSiguienteNodo(), x, ante, actu+1, maximaDistancia);
     }
 
     private boolean isEmpty() {
